@@ -19,13 +19,17 @@
     <%= group.group_type %>
   </p>
 
-  <th>Concerts:</th>
+  <th>Presentations:</th>
     <td>
-      <ul> Presentations: <%= group.presentations%> </ul>
-      <ul> Presentations this month: </ul>
+      <ul><% group.presentations%></ul>
+      <ul> This month: <%= group.this_month%> </ul>
+      <ul> Total: <%= group.presentations%> </ul>
       <ul>
         <% group.concerts.each do |concert|%>
-          <li>Localización: <%= concert.place %>, Asistentes: <%= concert.attendance %></li>
+          <li>Localización: <%= concert.place %></li> 
+          <li>Asistentes: <%= concert.attendance %></li>
+          <li>Fecha y hora: <%= concert.date %></li>
+          <br>
         <%end%>
       </ul>
     </td>  
